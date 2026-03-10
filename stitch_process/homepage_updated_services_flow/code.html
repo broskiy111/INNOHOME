@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e6e6e6",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .atmospheric-gradient {
+            background: radial-gradient(circle at 50% -20%, #262626 0%, #0a0a0a 70%);
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .text-kern-wide {
+            letter-spacing: 0.3em;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-background-dark">
+    <div class="relative min-h-screen flex flex-col atmospheric-gradient">
+        <!-- Navigation -->
+        <header class="fixed top-0 z-50 w-full border-b border-white/10 bg-background-dark/80 backdrop-blur-md">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+                <div class="flex items-center gap-3">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined text-3xl">polyline</span>
+                    </div>
+                    <h2 class="text-xl font-bold tracking-tight text-white uppercase">InnoHome</h2>
+                </div>
+                <nav class="hidden md:flex items-center gap-10">
+                    <a class="text-sm font-medium text-white underline underline-offset-8 decoration-primary transition-colors"
+                        href="/homepage_updated_services_flow/code.html">Home</a>
+                    <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                        href="/services_updated_directions/code.html">Services</a>
+                    <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                        href="/projects_cinematic_dark/code.html">Portfolio</a>
+                    <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                        href="/contacts_atmospheric_architectural_theme/code.html">Contact</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <a href="/contacts_atmospheric_architectural_theme/code.html">
+                        <button
+                            class="hidden sm:flex min-w-[120px] items-center justify-center rounded bg-primary px-5 py-2 text-sm font-bold text-background-dark hover:bg-white transition-all">
+                            Get Started
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <!-- Hero Section -->
+        <main class="flex-grow flex flex-col">
+            <section class="relative h-screen flex flex-col items-center justify-center pt-20 px-6">
+                <div class="absolute inset-0 z-0 opacity-40">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-background-dark"></div>
+                    <img alt="Modern minimalist concrete house exterior" class="w-full h-full object-cover"
+                        data-alt="Wide angle shot of minimalist concrete architecture at dusk"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxlntlUwKc_OjWF4GYg7kteQ0RcMVKOZCPOd0nAgIbRxBsknDqJnuY9iighw79nPjIKHC0Qu46WSwpQZcN_dUI0zDMGxhxdi6-yC75ZP8hZnaG_NcIaZ0RFXzmaz9oFpVJG4SaY_zDPDdNkWPpxUCoi-gEONa63_wNazKf0-1LCzgrjngAJyhZm0__eYfxy__5GTaUb1_rPkntfWHU68o8hHT8jaHCT9AtdvOPyO0mQ9Bi3-Y2pXv4gDZkWdGVTM1yj3uW6Ec86i4" />
+                </div>
+                <div class="relative z-10 max-w-5xl w-full text-left space-y-12">
+                    <div class="space-y-4">
+                        <span class="text-[10px] uppercase tracking-[0.5em] text-primary/60 font-medium">Architectural
+                            Laboratory</span>
+                        <h1
+                            class="text-6xl md:text-9xl font-black tracking-[-0.05em] leading-none text-white uppercase">
+                            Инновационное<br /><span
+                                class="text-transparent border-t-2 border-primary/20 bg-clip-text bg-gradient-to-r from-primary via-slate-400 to-primary/50">жилое
+                                пространство</span>
+                        </h1>
+                    </div>
+                    <p class="max-w-xl text-slate-400 text-lg font-light leading-relaxed ml-1">
+                        Переосмысление границ жилого пространства с помощью высококачественной инженерной конструкции.
+                    </p>
+                    <div class="pt-6 flex flex-col sm:flex-row gap-4 justify-center">
+                        <button
+                            class="bg-primary text-background-dark px-10 py-4 text-[12px] uppercase tracking-[0.3em] font-bold rounded">
+                            Explore Houses
+                        </button>
+                        <button
+                            class="border border-white/10 text-white px-10 py-4 text-[12px] uppercase tracking-[0.3em] font-bold hover:bg-white/5 transition-all rounded">
+                            Our Process
+                        </button>
+                    </div>
+                </div>
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+                    <span class="text-[10px] uppercase tracking-[0.3em] text-slate-500">Scroll to discover</span>
+                    <div class="w-px h-12 bg-gradient-to-b from-primary to-transparent"></div>
+                </div>
+            </section>
+            <!-- Services Section -->
+            <section class="py-64 px-6 max-w-7xl mx-auto w-full border-t border-white/5">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
+                    <div class="lg:col-span-5 sticky top-32 space-y-12">
+                        <div class="space-y-6">
+                            <span class="text-[10px] uppercase tracking-[0.6em] text-primary/40 font-bold">Specialized
+                                Expertise</span>
+                            <h2
+                                class="text-5xl md:text-7xl font-light tracking-tighter text-white leading-[0.9] uppercase italic">
+                                Передовые<br /><span class="font-black not-italic ml-8">возможности</span></h2>
+                        </div>
+                        <p class="max-w-md text-slate-400 font-light text-lg leading-relaxed italic">
+                            "Технологии, меняющие будущее, строятся на основе глубоких знаний и смелых решений."
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 space-y-40">
+                        <div class="group space-y-8 max-w-md ml-auto">
+                            <div class="flex items-baseline gap-4">
+                                <span
+                                    class="text-4xl font-thin text-primary/20 group-hover:text-primary/60 transition-colors duration-700">01</span>
+                                <h3 class="text-3xl font-bold text-white uppercase tracking-tighter">Automation</h3>
+                            </div>
+                            <p class="text-slate-500 text-lg font-light leading-relaxed">Intelligent home ecosystems
+                                that learn and adapt. We implement seamless automation for lighting, acoustics, and
+                                environment control, ensuring your space responds intuitively to your presence.</p>
+                            <div class="h-px w-full bg-white/5 group-hover:bg-primary/20 transition-all duration-700">
+                            </div>
+                        </div>
+                        <div class="group space-y-8 max-w-md">
+                            <div class="flex items-baseline gap-4">
+                                <span
+                                    class="text-4xl font-thin text-primary/20 group-hover:text-primary/60 transition-colors duration-700">02</span>
+                                <h3 class="text-3xl font-bold text-white uppercase tracking-tighter">Heating &amp;
+                                    Climate</h3>
+                            </div>
+                            <p class="text-slate-500 text-lg font-light leading-relaxed">Передовая теплоэнергетика для
+                                оптимального комфорта. Наши системы интегрируют высокоэффективное отопление и очистку
+                                воздуха в жилую архитектуру, сохраняя идеальное равновесие в каждом сезоне.</p>
+                            <div class="h-px w-full bg-white/5 group-hover:bg-primary/20 transition-all duration-700">
+                            </div>
+                        </div>
+                        <div class="group space-y-8 max-w-md ml-auto">
+                            <div class="flex items-baseline gap-4">
+                                <span
+                                    class="text-4xl font-thin text-primary/20 group-hover:text-primary/60 transition-colors duration-700">03</span>
+                                <h3 class="text-3xl font-bold text-white uppercase tracking-tighter">Energy
+                                    Infrastructure</h3>
+                            </div>
+                            <p class="text-slate-500 text-lg font-light leading-relaxed">Resilient power supply
+                                solutions tailored for high-end residential needs. From smart grid integration to backup
+                                energy storage, we ensure uninterrupted performance and efficiency.</p>
+                            <div class="h-px w-full bg-white/5 group-hover:bg-primary/20 transition-all duration-700">
+                            </div>
+                        </div>
+                        <div class="group space-y-8 max-w-md">
+                            <div class="flex items-baseline gap-4">
+                                <span
+                                    class="text-4xl font-thin text-primary/20 group-hover:text-primary/60 transition-colors duration-700">04</span>
+                                <h3 class="text-3xl font-bold text-white uppercase tracking-tighter">Security Systems
+                                </h3>
+                            </div>
+                            <p class="text-slate-500 text-lg font-light leading-relaxed">
+                                Sophisticated low-current networks and high-definition video surveillance. We design
+                                discreet security layers that provide total peace of mind without compromising the
+                                aesthetic integrity of the home.
+                            </p>
+                            <div class="h-px w-full bg-white/5 group-hover:bg-primary/20 transition-all duration-700">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Featured Projects -->
+            <section class="py-64">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="flex flex-col md:flex-row justify-between items-end mb-32 gap-12">
+                        <div class="space-y-4">
+                            <h2 class="text-xs uppercase tracking-[0.8em] text-primary/40 font-bold">Index / Selected
+                                Works</h2>
+                            <p class="text-4xl font-light text-white italic">Универсальные решения для вашего проекта
+                            </p>
+                        </div>
+                        <a class="group flex items-center gap-6 text-[11px] uppercase tracking-[0.4em] text-white border-b border-white/10 pb-2 hover:border-primary transition-all"
+                            href="#">
+                            View All Projects
+                            <span
+                                class="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">east</span>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                        <div class="md:col-span-7 group cursor-pointer mb-24 md:mb-0">
+                            <div class="relative overflow-hidden aspect-[16/10] bg-zinc-900">
+                                <img alt="Brutalist concrete villa"
+                                    class="w-full h-full object-cover grayscale opacity-40 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuARP82Kxs4Fb9U7gd4zAa3hUuMqEBJk2PhyhR7KzIyOYJ2UmpRg7zdVb-B6cghFxFos3iGMU7I6wC7GGSysT80L7qzJK3ULjY9wf6Nq1KcQDvy3LWiOWE1mGirBJCmmcW9DkhQ1euGyu44JErRzbb3eSPPuRXn5ByNrIQKiqcxhFapOz6FDh7Xye6cyJhxy7Y-WL297j5GmpGGxJg7VVMI-cFiA-X3qs1i9aCfluU4kDiYIVuSQ0kYjQuvkIDrdKVR6W0_MMoqDsUw" />
+                                <div class="absolute bottom-8 right-8 text-right">
+                                    <span
+                                        class="text-[10px] uppercase tracking-[0.4em] text-white/50 mb-2 block">Switzerland</span>
+                                    <h3 class="text-2xl font-black text-white uppercase tracking-tighter">The Monolith
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:col-start-9 md:col-span-4 group cursor-pointer">
+                            <div class="relative overflow-hidden aspect-[3/4] bg-zinc-900">
+                                <img alt="Glass facade modern office"
+                                    class="w-full h-full object-cover grayscale opacity-40 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp1CsFHVukMECQstzZt9zC_IMusS0lEpuu9UZWb6JOVr_xl1UDVwo8VtE49VE5d6IH_yQoun-bzGqi226qI5u9wWp6lT3gVGmwM7a3fA3njVnw4bYyOetePmk6S0Kb8_gMPFqhboGdX_H4Gb2iuDjdDZMer9ly3gyjVLtwQ1I_IWvrf_ZVA1TM0KgsysMppwPb8MIxI7ieXbx9mnJJ3ZXWzAgTeyT5tU5hhDX6N9LbhgwpqwMHtJXvPzRyc_CM95lr73ZF_hKKjr0" />
+                                <div class="absolute top-8 left-8">
+                                    <span
+                                        class="text-[10px] uppercase tracking-[0.4em] text-white/50 mb-2 block">Germany</span>
+                                    <h3 class="text-2xl font-black text-white uppercase tracking-tighter">Nexus Hub</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Process Section -->
+            <section class="py-64 px-6 bg-background-dark">
+                <div class="max-w-5xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+                        <div class="space-y-12">
+                            <h2 class="text-6xl font-black text-white uppercase tracking-tighter leading-none">
+                                Наш<br /><span
+                                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white/20">процесс</span>
+                            </h2>
+                            <p class="text-slate-500 text-lg font-light leading-relaxed max-w-sm">
+                                Наш процесс - это баланс между интуицией и инженерией, обеспечивающий, чтобы каждая
+                                деталь служила цели.
+                            </p>
+                        </div>
+                        <div class="space-y-20 relative">
+                            <div class="absolute left-0 top-0 bottom-0 w-px bg-white/5"></div>
+                            <div class="pl-12 relative">
+                                <div class="absolute left-0 top-4 w-4 h-px bg-primary"></div>
+                                <span
+                                    class="text-[10px] uppercase tracking-[0.4em] text-primary/60 font-bold mb-4 block">Этап
+                                    1</span>
+                                <h4 class="text-white text-xl font-bold uppercase tracking-wider mb-2">Концепция и
+                                    стратегия
+                                </h4>
+                                <p class="text-slate-500 text-sm leading-relaxed font-light">Глубокое погружение в
+                                    контекст и потребности клиента для разработки уникальной архитектуры умного дома.
+                                </p>
+                            </div>
+                            <div class="pl-12 relative">
+                                <div class="absolute left-0 top-4 w-4 h-px bg-primary"></div>
+                                <span
+                                    class="text-[10px] uppercase tracking-[0.4em] text-primary/60 font-bold mb-4 block">Этап
+                                    2</span>
+                                <h4 class="text-white text-xl font-bold uppercase tracking-wider mb-2">Персональное
+                                    проектирование
+                                </h4>
+                                <p class="text-slate-500 text-sm leading-relaxed font-light">Использование цифровых
+                                    технологий для создания уникальных решений, идеально подходящих под нужды каждого
+                                    клиента и особенности его пространства.</p>
+                            </div>
+                            <div class="pl-12 relative">
+                                <div class="absolute left-0 top-4 w-4 h-px bg-primary"></div>
+                                <span
+                                    class="text-[10px] uppercase tracking-[0.4em] text-primary/60 font-bold mb-4 block">Этап
+                                    3</span>
+                                <h4 class="text-white text-xl font-bold uppercase tracking-wider mb-2">Реализация и
+                                    внедрение</h4>
+                                <p class="text-slate-500 text-sm leading-relaxed font-light">Точный процесс
+                                    строительства, где цифровые концепты становятся реальными и долговечными
+                                    технологиями умного дома.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer class="bg-background-dark border-t border-white/5 py-20 px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="space-y-6 md:col-span-1">
+                    <div class="flex items-center gap-3">
+                        <div class="w-5 h-5 bg-primary"></div>
+                        <h2 class="text-lg font-black tracking-tighter text-white uppercase">Innohome</h2>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed uppercase tracking-widest">
+                        Crafting cinematic living spaces since 2014.
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <h4 class="text-[10px] uppercase tracking-[0.3em] text-white font-bold">Studio</h4>
+                    <ul class="space-y-4 text-xs tracking-widest text-slate-500 uppercase">
+                        <li><a class="hover:text-primary transition-colors" href="#">Our Ethos</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Laboratory</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Awards</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-6">
+                    <h4 class="text-[10px] uppercase tracking-[0.3em] text-white font-bold">Connect</h4>
+                    <ul class="space-y-4 text-xs tracking-widest text-slate-500 uppercase">
+                        <li><a class="hover:text-primary transition-colors" href="#">Instagram</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">LinkedIn</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Vimeo</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-6">
+                    <h4 class="text-[10px] uppercase tracking-[0.3em] text-white font-bold">Newsletter</h4>
+                    <div class="flex border-b border-white/20 pb-2">
+                        <input
+                            class="bg-transparent text-xs w-full focus:outline-none text-white placeholder:text-slate-700 tracking-widest"
+                            placeholder="YOUR EMAIL" type="email" />
+                        <button class="material-symbols-outlined text-primary text-sm">arrow_forward</button>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="max-w-7xl mx-auto pt-20 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-white/5 mt-20">
+                <p class="text-[9px] text-slate-600 uppercase tracking-[0.3em]">© 2024 INNOHOME Lab. All rights
+                    reserved.</p>
+                <div class="flex gap-8 text-[9px] text-slate-600 uppercase tracking-[0.3em]">
+                    <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+                    <a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

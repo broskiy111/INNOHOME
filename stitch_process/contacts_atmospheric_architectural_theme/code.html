@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#e6e6e6",
+            "background-light": "#f7f7f7",
+            "background-dark": "#191919",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <title>Contact Us | InnoHome</title>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+  <div class="relative flex min-h-screen flex-col">
+    <!-- Navigation -->
+    <header class="fixed top-0 z-50 w-full border-b border-white/10 bg-background-dark/80 backdrop-blur-md">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+        <div class="flex items-center gap-3">
+          <div class="text-primary">
+            <span class="material-symbols-outlined text-3xl">polyline</span>
+          </div>
+          <h2 class="text-xl font-bold tracking-tight text-white uppercase">InnoHome</h2>
+        </div>
+        <nav class="hidden md:flex items-center gap-10">
+          <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+            href="/homepage_updated_services_flow/code.html">Home</a>
+          <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+            href="/services_updated_directions/code.html">Services</a>
+          <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+            href="/projects_cinematic_dark/code.html">Portfolio</a>
+          <a class="text-sm font-medium text-white underline underline-offset-8 decoration-primary transition-colors"
+            href="/contacts_atmospheric_architectural_theme/code.html">Contact</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="/contacts_atmospheric_architectural_theme/code.html">
+            <button
+              class="hidden sm:flex min-w-[120px] items-center justify-center rounded bg-primary px-5 py-2 text-sm font-bold text-background-dark hover:bg-white transition-all">
+              Get Started
+            </button>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <!-- Hero Section -->
+      <section class="relative h-[60vh] md:h-[70vh] flex flex-col justify-center">
+        <div class="absolute inset-0 z-0">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/60 to-transparent z-10">
+          </div>
+          <div class="w-full h-full bg-cover bg-center" data-alt="Cinematic modern office interior dark atmosphere"
+            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTcBqjVtXZpVCommXwxD0rySv4f2ANdsC5QqWghb58Z23obR3R2Ymup0X1dDtTb8KioOxk0tiK_v3Wn3itzqvvpENzfFd86IHJBH9oAUBpXT4hrc9i_NQbFT-ueMYa7V84VbonnM3dSyayEk4OQyZuWbocLN_mSZauLggjkt9ttzP5ACc-5t4xBV7dOJgdBUAz7WRpBvN7R6x4a8f3N0oVUV7ufzuGdL84gioFta4AJXciSUTpD-cHqBZAcIwRKaOG4yO9rforlhE')">
+          </div>
+        </div>
+        <div class="relative z-20 px-6 md:px-20 pb-12 max-w-6xl mx-auto w-full">
+          <div class="max-w-4xl">
+            <span class="text-primary uppercase tracking-[0.4em] text-xs font-bold mb-6 block opacity-80">Design
+              Consultation</span>
+            <h1 class="text-6xl md:text-9xl font-black tracking-tighter text-slate-100 leading-[0.9] mb-8">
+              Ваша мечта, <br />наша реальность.
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl max-w-xl font-light leading-relaxed">
+              Преобразуем ваши идеи в умные и комфортные решения. Начните путь к идеальному дому с нами.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Content Grid -->
+      <section class="px-6 md:px-20 py-24 max-w-7xl mx-auto w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-20">
+          <!-- Left Side: Architectural Form -->
+          <div class="lg:col-span-6 flex flex-col gap-12">
+            <div class="border-l-2 border-primary pl-8 py-2">
+              <h2 class="text-2xl font-bold uppercase tracking-widest mb-4">The Form</h2>
+              <p class="text-slate-500 text-sm uppercase tracking-widest font-medium">Submit your project details for a
+                private assessment.</p>
+            </div>
+            <form class="flex flex-col gap-10">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="flex flex-col gap-4 group">
+                  <label
+                    class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-primary transition-colors">Full
+                    Name</label>
+                  <input
+                    class="w-full bg-transparent border-0 border-b border-slate-800 focus:border-primary focus:ring-0 px-0 py-3 text-slate-100 placeholder:text-slate-700 transition-all outline-none text-lg"
+                    placeholder="John Doe" type="text" />
+                </div>
+                <div class="flex flex-col gap-4 group">
+                  <label
+                    class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-primary transition-colors">Email
+                    Address</label>
+                  <input
+                    class="w-full bg-transparent border-0 border-b border-slate-800 focus:border-primary focus:ring-0 px-0 py-3 text-slate-100 placeholder:text-slate-700 transition-all outline-none text-lg"
+                    placeholder="john@example.com" type="email" />
+                </div>
+              </div>
+              <div class="flex flex-col gap-4 group">
+                <label
+                  class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-primary transition-colors">Inquiry
+                  Type</label>
+                <select
+                  class="w-full bg-transparent border-0 border-b border-slate-800 focus:border-primary focus:ring-0 px-0 py-3 text-slate-100 transition-all outline-none appearance-none text-lg cursor-pointer">
+                  <option class="bg-background-dark">Residential Automation</option>
+                  <option class="bg-background-dark">Commercial Solutions</option>
+                  <option class="bg-background-dark">System Integration</option>
+                  <option class="bg-background-dark">Technical Support</option>
+                </select>
+              </div>
+              <div class="flex flex-col gap-4 group">
+                <label
+                  class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-primary transition-colors">The
+                  Vision</label>
+                <textarea
+                  class="w-full bg-transparent border-0 border-b border-slate-800 focus:border-primary focus:ring-0 px-0 py-3 text-slate-100 placeholder:text-slate-700 transition-all outline-none resize-none text-lg"
+                  placeholder="Tell us about your space..." rows="4"></textarea>
+              </div>
+              <button
+                class="relative flex items-center justify-between w-full md:w-fit md:min-w-[280px] group overflow-hidden border border-primary/20 hover:border-primary px-8 h-16 transition-all duration-500">
+                <span
+                  class="relative z-10 text-[11px] font-bold uppercase tracking-[0.4em] text-primary group-hover:text-background-dark transition-colors duration-500">Initialize
+                  Project</span>
+                <span
+                  class="material-symbols-outlined relative z-10 text-primary group-hover:text-background-dark transition-colors duration-500">arrow_right_alt</span>
+                <div
+                  class="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                </div>
+              </button>
+            </form>
+          </div>
+          <!-- Right Side: Contact Details & Visuals -->
+          <div class="lg:col-span-5 lg:offset-1 flex flex-col gap-16">
+            <div class="flex flex-col gap-12">
+              <div class="flex flex-col gap-8 border-b border-slate-800 pb-12">
+                <h3 class="text-[10px] font-black uppercase tracking-[0.5em] text-primary/40">Global Headquarters</h3>
+                <div class="flex flex-col gap-6">
+                  <div class="flex items-start gap-6">
+                    <span class="material-symbols-outlined text-primary text-xl mt-1">architecture</span>
+                    <div>
+                      <p class="text-slate-100 text-lg font-light leading-relaxed mb-4">
+                        452 Innovation Blvd, Suite 100<br />
+                        Palo Alto, California 94301
+                      </p>
+                      <a class="text-[10px] font-bold text-primary uppercase tracking-[0.3em] flex items-center gap-2 hover:opacity-70 transition-opacity"
+                        href="#">
+                        Explore Location <span class="material-symbols-outlined text-xs">north_east</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 border-b border-slate-800 pb-12">
+                <div class="flex flex-col gap-4">
+                  <h3 class="text-[10px] font-black uppercase tracking-[0.5em] text-primary/40">Communication</h3>
+                  <p class="text-slate-300 font-light text-sm">
+                    +1 (888) 555-0123<br />
+                    Mon-Fri, 9am-6pm PST
+                  </p>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <h3 class="text-[10px] font-black uppercase tracking-[0.5em] text-primary/40">Inquiries</h3>
+                  <p class="text-slate-300 font-light text-sm">
+                    hello@innohome.com<br />
+                    support@innohome.com
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Map Visual: Architectural style -->
+            <div class="group relative">
+              <div
+                class="absolute -inset-4 border border-primary/10 group-hover:border-primary/30 transition-colors duration-700 -z-10">
+              </div>
+              <div
+                class="rounded-none overflow-hidden aspect-[4/3] relative border border-slate-800 grayscale brightness-50 hover:brightness-75 transition-all duration-700">
+                <div class="w-full h-full bg-cover bg-center" data-alt="Minimalist architectural map"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADdT4nRC328K4rCIk786H-N0qi5BlmC98Rodz6tTUmwLYeIOvnPDBTR4G34QDeCznbTiYyoOb-36BC600d6i7wXI2AUPg2aenVEABfTcVlSVAzEnWGImw1vpF9zKgrKUyG_PMZUyk9cGAJ_9c94CO6zE_bMzheAHKNCDf3rafSyf3sifUcYJimzUHAL_267ryh4vsnkpLI7lbJRlV0DTgWrI0W0JfKJrqSGJ8bEPSK6F9VkGR9Lv3AEdFWfE5nD195lqmRNEetXw0')">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-tr from-background-dark/80 to-transparent"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-12 px-6 md:px-20 mt-20">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex items-center gap-2 opacity-50">
+          <div class="size-4">
+            <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z">
+              </path>
+            </svg>
+          </div>
+          <span class="text-xs uppercase tracking-widest font-bold">InnoHome © 2024</span>
+        </div>
+        <div class="flex gap-8 text-slate-500 text-xs font-bold uppercase tracking-[0.2em]">
+          <a class="hover:text-primary transition-colors" href="#">Privacy</a>
+          <a class="hover:text-primary transition-colors" href="#">Terms</a>
+          <a class="hover:text-primary transition-colors" href="#">Twitter</a>
+          <a class="hover:text-primary transition-colors" href="#">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
