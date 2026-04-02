@@ -119,39 +119,6 @@
             background: rgba(255,255,255,0.04);
         }
 
-        /* Back to top button */
-        #back-to-top {
-            position: fixed;
-            bottom: 32px;
-            right: 32px;
-            z-index: 9999;
-            width: 48px;
-            height: 48px;
-            background: rgba(10,10,10,0.9);
-            border: 1px solid rgba(230,230,230,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease, border-color 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        #back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        #back-to-top:hover {
-            border-color: rgba(230,230,230,0.6);
-        }
-
-        #back-to-top:hover .material-symbols-outlined {
-            color: #fff;
-        }
-
         /* File input styling */
         .file-input-label {
             display: flex;
@@ -185,11 +152,6 @@
 
 <body
     class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-background-dark">
-
-    <!-- Back to top button -->
-    <button id="back-to-top" aria-label="Наверх" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-        <span class="material-symbols-outlined text-primary" style="font-size:20px;">arrow_upward</span>
-    </button>
 
     <div class="relative min-h-screen flex flex-col atmospheric-gradient">
         <!-- Navigation -->
@@ -652,16 +614,6 @@
     </div>
 
     <script>
-        // Back to top button
-        const backToTopBtn = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
-        });
-
         // Update file name display
         function updateFileName(input) {
             const display = document.getElementById('file-name-display');
