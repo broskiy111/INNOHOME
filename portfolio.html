@@ -102,13 +102,22 @@
         color: #e6e6e6;
         background: rgba(255, 255, 255, 0.04);
     }
+    
+    /* Hide scrollbar for tabs */
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .hide-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
 
 </style>
 
 </head>
 
 <body class="bg-background text-white font-body" 
-      x-data="{ activeTab: window.location.hash ? window.location.hash.substring(1) : 'home' }"
+      x-data="{ activeTab: window.location.hash ? window.location.hash.substring(1) : 'home', mobileMenuOpen: false }"
       x-init="window.addEventListener('hashchange', () => { 
           const hash = window.location.hash.substring(1);
           if (hash) {
@@ -119,13 +128,20 @@
 
 
     <header class="fixed top-0 z-50 w-full border-b border-white/10 bg-background/80 backdrop-blur-md">
-        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10 relative z-50">
             <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
                 <div class="text-white">
                     <img src="logo.png" alt="InnoHome logo" class="h-8 w-auto object-contain" />
                 </div>
                 <h2 class="text-xl font-bold tracking-tight text-white uppercase">InnoHome</h2>
             </a>
+
+            <!-- Mobile Menu Hamburger Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden flex flex-col justify-center gap-1.5 p-2 focus:outline-none z-50 ml-auto">
+                <div class="h-0.5 w-6 bg-white transition-all duration-300" :class="mobileMenuOpen ? 'rotate-45 translate-y-2.5' : ''"></div>
+                <div class="h-0.5 w-6 bg-white transition-all duration-300" :class="mobileMenuOpen ? 'opacity-0' : ''"></div>
+                <div class="h-0.5 w-6 bg-white transition-all duration-300" :class="mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''"></div>
+            </button>
 
             <nav class="hidden md:flex items-center gap-10">
                 <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors" href="index.html">Главная</a>
@@ -143,18 +159,33 @@
                         <a href="javascript:void(0)" @click="activeTab = 'medical'; window.scrollTo({top: 0, behavior: 'smooth'})">Медцентры</a>
                         <a href="javascript:void(0)" @click="activeTab = 'sports'; window.scrollTo({top: 0, behavior: 'smooth'})">Спорт</a>
                         <a href="javascript:void(0)" @click="activeTab = 'restaurants'; window.scrollTo({top: 0, behavior: 'smooth'})">Рестораны и кафе</a>
-
-
                     </div>
                 </div>
             </nav>
-            <div class="flex items-center gap-4">
+            <div class="hidden md:flex items-center gap-4">
                 <a href="index.html#contact">
-                    <button class="hidden sm:flex min-w-[120px] items-center justify-center rounded bg-primary px-5 py-2 text-sm font-bold text-background hover:bg-white transition-all">
+                    <button class="min-w-[120px] items-center justify-center rounded bg-primary px-5 py-2 text-sm font-bold text-background hover:bg-white transition-all">
                         Контакты
                     </button>
                 </a>
             </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div x-show="mobileMenuOpen" 
+             x-cloak
+             class="md:hidden fixed inset-0 h-screen w-screen bg-background/95 backdrop-blur-3xl flex flex-col items-center justify-center gap-8 -z-10"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0"
+             x-transition:enter-end="opacity-100"
+             x-transition:leave="transition ease-in duration-300"
+             x-transition:leave-start="opacity-100"
+             x-transition:leave-end="opacity-0">
+            <a @click="mobileMenuOpen = false" class="text-2xl font-black uppercase text-slate-400 hover:text-white transition-colors" href="index.html">Главная</a>
+            <a @click="mobileMenuOpen = false" class="text-2xl font-black uppercase text-slate-400 hover:text-white transition-colors" href="services.html">Услуги</a>
+            <a @click="mobileMenuOpen = false" class="text-2xl font-black uppercase text-slate-400 hover:text-white transition-colors" href="engineering.html">Инженерные системы</a>
+            <a @click="mobileMenuOpen = false" class="text-2xl font-black uppercase text-white transition-colors" href="portfolio.html">Объекты интеграции</a>
+            <a @click="mobileMenuOpen = false" href="index.html#contact" class="mt-8 rounded bg-primary px-8 py-3 text-lg font-bold text-background hover:bg-white transition-all">Контакты</a>
         </div>
     </header>
 
@@ -303,13 +334,13 @@
 }'>
 
     <!-- Global Filter Tabs -->
-    <section class="px-6 md:px-12 mb-20 overflow-x-auto">
+    <section class="px-6 md:px-12 mb-20 overflow-x-auto hide-scrollbar snap-x snap-mandatory">
         <div class="flex flex-nowrap md:flex-wrap gap-4 border-b border-white/5 pb-8 min-w-max">
             <template x-for="project in projects" :key="project.id">
                 <button 
                     @click="activeTab = project.id; window.scrollTo({top: 0, behavior: 'smooth'})"
                     x-text="project.title"
-                    class="px-6 py-2 text-[9px] font-bold tracking-[0.5em] uppercase transition-colors rounded-none"
+                    class="px-6 py-2 text-[9px] font-bold tracking-[0.5em] uppercase transition-colors rounded-none whitespace-nowrap shrink-0 snap-start"
                     :class="activeTab === project.id ? 'bg-primary text-background' : 'border border-white/10 text-neutral-500 hover:text-white'">
                 </button>
             </template>
@@ -325,7 +356,7 @@
                 <div class="flex flex-col md:flex-row items-end justify-between gap-8">
                     <div class="max-w-4xl">
                         <span class="text-[10px] text-kern-ultra uppercase text-secondary mb-6 block" x-text="project.nav_label"></span>
-                        <h1 class="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-none" x-html="project.hero_title"></h1>
+                        <h1 class="text-4xl md:text-9xl font-black tracking-tighter uppercase leading-none mt-8 md:mt-0" x-html="project.hero_title"></h1>
                     </div>
                     <div class="w-px h-32 bg-primary/20 hidden md:block"></div>
                     <div class="max-w-sm pb-4">
@@ -334,7 +365,7 @@
                 </div>
             </section>
 
-            <section class="px-6 md:px-12 pb-40 space-y-40">
+            <section class="px-6 md:px-12 pb-24 md:pb-40 space-y-24 md:space-y-40">
                 <!-- Block 1 -->
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-12 group">
                     <div class="md:col-span-7 overflow-hidden aspect-[16/10] relative">
@@ -342,11 +373,11 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
                     </div>
                     <div class="md:col-span-5 flex flex-col justify-center">
-                        <div class="flex items-center gap-4 mb-6">
+                        <div class="flex items-center gap-4 mb-6 mt-8 md:mt-0">
                             <span class="w-8 h-px bg-primary"></span>
                             <span class="text-[10px] font-medium tracking-[0.5em] uppercase text-primary" x-text="project.blocks[0].num"></span>
                         </div>
-                        <h3 class="text-4xl font-black uppercase mb-6 tracking-tight">
+                        <h3 class="text-3xl md:text-4xl font-black uppercase mb-6 tracking-tight">
                             <span x-text="project.blocks[0].title.split(' ')[0]"></span>
                             <span class="font-light italic text-secondary" x-text="project.blocks[0].title.split(' ').slice(1).join(' ')"></span>
                         </h3>
@@ -364,7 +395,7 @@
                     <div class="md:col-span-4 glass-panel p-12 flex flex-col justify-between md:h-[600px] border border-white/5">
                         <div>
                             <div class="text-[10px] font-medium tracking-[0.5em] uppercase text-primary mb-8" x-text="project.blocks[1].num"></div>
-                            <h3 class="text-3xl font-black uppercase tracking-tight mb-6 leading-tight">
+                            <h3 class="text-3xl md:text-3xl font-black uppercase tracking-tight mb-6 leading-tight">
                                 <span x-text="project.blocks[1].title.split(' ')[0]"></span> <br/>
                                 <span class="font-light italic" x-text="project.blocks[1].title.split(' ').slice(1).join(' ')"></span>
                             </h3>
@@ -383,12 +414,12 @@
 
                 <!-- Block 3 -->
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-12 group items-center">
-                    <div class="md:col-span-5 order-2 md:order-1">
+                    <div class="md:col-span-5 order-2 md:order-1 mt-8 md:mt-0">
                         <div class="flex items-center gap-4 mb-6">
                             <span class="w-8 h-px bg-primary"></span>
                             <span class="text-[10px] font-medium tracking-[0.5em] uppercase text-primary" x-text="project.blocks[2].num"></span>
                         </div>
-                        <h3 class="text-4xl font-black uppercase mb-6 tracking-tight">
+                        <h3 class="text-3xl md:text-4xl font-black uppercase mb-6 tracking-tight">
                             <span x-text="project.blocks[2].title.split(' ')[0]"></span>
                             <span class="font-light italic text-secondary" x-text="project.blocks[2].title.split(' ').slice(1).join(' ')"></span>
                         </h3>
@@ -411,12 +442,12 @@
                 </div>
 
                 <!-- Block 4: Optimization -->
-                <div class="relative bg-surface-container py-32 px-6 md:px-12 overflow-hidden">
+                <div class="relative bg-surface-container py-16 md:py-32 px-6 md:px-12 overflow-hidden">
                     <div class="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent"></div>
-                    <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-20">
+                    <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
                         <div>
                             <span class="text-[10px] font-medium tracking-[0.5em] uppercase text-primary mb-8 block" x-text="project.blocks[3].num"></span>
-                            <h3 class="text-5xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-tight">
+                            <h3 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-tight">
                                 <span x-text="project.blocks[3].title.split(' ')[0]"></span> <br/>
                                 <span class="font-light italic" x-text="project.blocks[3].title.split(' ').slice(1).join(' ')"></span>
                             </h3>
