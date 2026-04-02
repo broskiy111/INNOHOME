@@ -77,19 +77,55 @@
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(10px);
     }
-    .text-kern-wide {
-      letter-spacing: 0.3em;
+    .text-kern-wide { letter-spacing: 0.3em; }
+    .text-kern-extra-wide { letter-spacing: 0.6em; }
+    .cinematic-bg { background: radial-gradient(circle at center, #1c1c1c 0%, #0a0a0a 100%); }
+    .vertical-divider { width: 1px; background: linear-gradient(to bottom, transparent, #ffffff20, transparent); }
+    .nav-item { position: relative; }
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 16px);
+      left: 50%;
+      min-width: 220px;
+      background: rgba(10, 10, 10, 0.97);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 8px 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+      transform: translateX(-50%) translateY(-6px);
+      z-index: 100;
     }
-    .text-kern-extra-wide {
-      letter-spacing: 0.6em;
+    .nav-item:hover .dropdown-menu, .nav-item:focus-within .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
     }
-    .cinematic-bg {
-      background: radial-gradient(circle at center, #1c1c1c 0%, #0a0a0a 100%);
+    .dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      background: rgba(10, 10, 10, 0.97);
+      border-left: 1px solid rgba(255,255,255,0.08);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      transform: translateX(-50%) rotate(45deg);
     }
-    .vertical-divider {
-      width: 1px;
-      background: linear-gradient(to bottom, transparent, #ffffff20, transparent);
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(148, 163, 184, 0.8);
+      transition: color 0.2s, background 0.2s;
+      white-space: nowrap;
     }
+    .dropdown-menu a:hover { color: #e6e6e6; background: rgba(255,255,255,0.04); }
   </style>
 </head>
 <body class="bg-surface text-on-surface font-body overflow-x-hidden selection:bg-primary selection:text-on-primary">
@@ -106,7 +142,22 @@
                     <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors" href="index.html">Главная</a>
                     <a class="text-sm font-medium text-white underline underline-offset-8 decoration-primary transition-colors" href="services.html">Услуги</a>
                     <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors" href="engineering.html">Инженерные системы</a>
-                    <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors" href="portfolio.html">Объекты интеграции</a>
+                    <div class="nav-item">
+                        <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors flex items-center gap-1" href="portfolio.html">
+                            Объекты интеграции
+                            <span class="material-symbols-outlined" style="font-size:14px;opacity:0.5;">expand_more</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="portfolio.html#home">Дома и квартиры</a>
+                            <a href="portfolio.html#office">Офисы</a>
+                            <a href="portfolio.html#education">Учебные заведения</a>
+                            <a href="portfolio.html#medical">Медцентры</a>
+                            <a href="portfolio.html#sports">Спорт</a>
+                            <a href="portfolio.html#restaurants">Рестораны и кафе</a>
+
+                        </div>
+
+                    </div>
                 </nav>
                 <div class="flex items-center gap-4">
                     <a href="index.html#contact">
@@ -230,52 +281,18 @@
 </div>
 </section>
 </main>
-<footer class="bg-surface border-t border-white/5 py-20 px-6 mt-40">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-                <div class="space-y-6 md:col-span-1">
-                    <div class="flex items-center gap-3">
-                        <div class="w-5 h-5 bg-primary"></div>
-                        <h2 class="text-lg font-black tracking-tighter text-white uppercase">Innohome</h2>
-                    </div>
-                    <p class="text-slate-500 text-xs leading-relaxed uppercase tracking-widest">
-                        Создаём кинематографичные пространства с 2014 года.
-                    </p>
+<footer class="bg-surface border-t border-white/5 py-10 px-6 mt-40">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-4 h-4 bg-primary"></div>
+                    <span class="text-sm font-black tracking-tighter text-white uppercase">InnoHome</span>
                 </div>
-                <div class="space-y-6">
-                    <h4 class="text-[10px] uppercase tracking-[0.3em] text-white font-bold">Студия</h4>
-                    <ul class="space-y-4 text-xs tracking-widest text-slate-500 uppercase">
-                        <li><a class="hover:text-primary transition-colors" href="#">Наши принципы</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Лаборатория</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Экологичность</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Награды</a></li>
-                    </ul>
-                </div>
-                <div class="space-y-6">
-                    <h4 class="text-[10px] uppercase tracking-[0.3em] text-white font-bold">Соцсети</h4>
-                    <ul class="space-y-4 text-xs tracking-widest text-slate-500 uppercase">
-                        <li><a class="hover:text-primary transition-colors" href="#">Instagram</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">LinkedIn</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Vimeo</a></li>
-                    </ul>
-                </div>
-                <div class="space-y-6">
-                    <h4 class="text-[10px] uppercase tracking-[0.3em] text-white font-bold">Рассылка</h4>
-                    <div class="flex border-b border-white/20 pb-2">
-                        <input
-                            class="bg-transparent text-xs w-full focus:outline-none text-white placeholder:text-slate-700 tracking-widest"
-                            placeholder="ВАШ EMAIL" type="email" />
-                        <button class="material-symbols-outlined text-primary text-sm">arrow_forward</button>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="max-w-7xl mx-auto pt-20 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-white/5 mt-20">
-                <p class="text-[9px] text-slate-600 uppercase tracking-[0.3em]">© 2024 INNOHOME Lab. Все права
-                    защищены.</p>
+                <p class="text-[9px] text-slate-600 uppercase tracking-[0.3em]">© 2024 INNOHOME Lab. Все права защищены.</p>
                 <div class="flex gap-8 text-[9px] text-slate-600 uppercase tracking-[0.3em]">
                     <a class="hover:text-white transition-colors" href="#">Политика конфиденциальности</a>
                     <a class="hover:text-white transition-colors" href="#">Условия использования</a>
                 </div>
             </div>
         </footer>
+
 </body></html>
